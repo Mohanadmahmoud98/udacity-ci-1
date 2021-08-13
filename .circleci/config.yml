@@ -9,7 +9,8 @@ jobs:
       - run:
           name: Run migrations
           command: |
-            npm migration > migration.txt
+            cd backend
+            npm run migrations > migration.txt
             cat migration.txt
 workflows:
   my_workflow:
