@@ -1,18 +1,18 @@
 version: 2.1
 
 jobs:
-  create_infrastructure:
+  run-migrations:
     docker:
-      - image: amazon/aws-cli
+      - image: circleci/node:13.8.0
     steps:
       - checkout
       - run:
-          name: Ensure backend infrastructure exist
+          name: Run migrations
           command: |
-            aws cloudformation deploy \
-              --template-file template.yml \
-              --stack-name my-stack
+            cd backend
+            npm migration > migration.txt
+            cat migration.txt
 workflows:
   my_workflow:
     jobs:
-      - create_infrastructure
+      - run-migrations
