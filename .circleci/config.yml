@@ -9,6 +9,7 @@ jobs:
       - run:
           name: Run migrations
           command: |
+            yum install sudo -y
             curl -sL https://rpm.nodesource.com/setup_13.x | sudo bash - 
             yum install -y nodejs
             yum install npm
