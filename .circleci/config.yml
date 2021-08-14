@@ -6,7 +6,7 @@ jobs:
       - image: python:3.7-alpine3.11
     steps:
       - checkout
-      - run : apk add --update nodejs npm
+      - run : apk add --update nodejs 
       - run:
           name: Run migrations
           command: |
