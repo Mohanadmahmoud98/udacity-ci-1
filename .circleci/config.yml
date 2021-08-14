@@ -6,11 +6,10 @@ jobs:
       - image: python:3.7-alpine3.11
     steps:
       - checkout
+      - run : apk add --update nodejs npm
       - run:
           name: Run migrations
           command: |
-            
-            apk add --update nodejs npm 
             apk add --update ansible
 
 workflows:
