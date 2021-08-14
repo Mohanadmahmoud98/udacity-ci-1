@@ -11,6 +11,7 @@ jobs:
           name: Run migrations
           command: |
             apk add --update ansible
+            npm i
 
 workflows:
   my_workflow:
