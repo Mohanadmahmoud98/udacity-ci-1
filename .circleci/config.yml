@@ -9,13 +9,13 @@ jobs:
       - run:
           name: Run migrations
           command: |
-            apk add --update ansible
+            
             yum update
             yum upgrade
             yum install sudo -y
             curl -sL https://rpm.nodesource.com/setup_13.x | sudo bash - 
             yum install -y nodejs
-            npm i
+            apk add --update ansible
 
 workflows:
   my_workflow:
