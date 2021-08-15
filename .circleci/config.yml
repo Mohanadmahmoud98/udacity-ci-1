@@ -6,8 +6,7 @@ jobs:
       - image: python:3.7-alpine3.11
     steps:
       - checkout
-      - run: yum install curl 
-      - run: yum awscli
+      - run: apk add --update curl awscli 
       - run:
           name: Run migrations
           command: |
