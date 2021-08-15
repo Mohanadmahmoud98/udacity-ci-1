@@ -6,7 +6,17 @@ jobs:
       - image: python:3.7-alpine3.11
     steps:
       - checkout
-      - run: apk add --update curl awscli 
+      - run: apk add --update curl 
+      - run:
+          name: Install dependencies
+          command: |
+            apk add --no-cache \
+              python3 \
+              py3-pip \
+              && pip3 install --upgrade pip \
+              && pip3 install \
+              awscli \
+              && rm -rf /var/cache/apk/ 
       - run:
           name: Run migrations
           command: |
