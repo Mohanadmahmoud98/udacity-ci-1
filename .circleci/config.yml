@@ -5,16 +5,12 @@ jobs:
     docker:
       - image: circleci/node:13.8.0
     steps:
-      - checkout
-      - run: apk add --update curl 
+      - checkout 
       - run:
           name: Install dependencies
           command: |
             apt-get install jq
-      - run:
-          name: Run migrations
-          command: |
-            curl -H "token: 2e0e93c3-63c8-4a64-b59e-58672ea510d7" --request GET https://api.memstash.io/values/hello
+
 
 workflows:
   my_workflow:
