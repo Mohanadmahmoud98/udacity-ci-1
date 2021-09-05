@@ -3,10 +3,10 @@ version: 2.1
 jobs:
   run-migrations:
     docker:
-      - image: python:3.7-alpine3.11
+      - image: ubuntu-2004:202010-01
     steps:
       - checkout 
-      - run: apk add --update tar gzip curl wget sudo
+      - run: sudo apt install curl gzip tar
       - run:
           name: Install dependencies
           command: |
