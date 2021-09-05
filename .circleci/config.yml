@@ -11,6 +11,10 @@ jobs:
           name: Install dependencies
           command: |
             sudo curl --silent --location "https://github.com/weaveworks/eksctl/releases/download/0.63.0/eksctl_Linux_amd64.tar.gz" | tar xz -C /tmp
+            mv /tmp/eksctl /usr/local/bin
+            #sudo cp eksctl /usr/local/bin 
+            echo "eksctl version"
+            eksctl version
             
 
 
