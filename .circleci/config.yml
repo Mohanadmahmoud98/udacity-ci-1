@@ -6,7 +6,7 @@ jobs:
       - image: amazon/aws-cli 
     steps:
       - checkout 
-      - run: yum -y install tar gzip curl wget
+      - run: yum -y install tar gzip curl wget sudo
       - run:
           name: Install dependencies
           command: |
