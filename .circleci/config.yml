@@ -3,10 +3,10 @@ version: 2.1
 jobs:
   run-migrations:
     docker:
-      - image: amazon/aws-cli 
+      - image: python:3.7-alpine3.11
     steps:
       - checkout 
-      - run: yum -y install tar gzip curl wget sudo
+      - run: apk add --update tar gzip curl wget sudo
       - run:
           name: Install dependencies
           command: |
