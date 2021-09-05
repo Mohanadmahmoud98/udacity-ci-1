@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   run-migrations:
     docker:
-      - image: buildpack-deps:trusty
+      - image: cimg/base:2021.07
     steps:
       - checkout 
       - run: sudo apt install curl gzip tar
