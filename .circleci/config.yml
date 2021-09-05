@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   run-migrations:
     docker:
-      - image: ubuntu-2004:202010-01
+      - image: buildpack-deps:trusty
     steps:
       - checkout 
       - run: sudo apt install curl gzip tar
