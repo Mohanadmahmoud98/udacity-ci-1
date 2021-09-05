@@ -3,7 +3,8 @@ version: 2.1
 jobs:
   run-migrations:
     docker:
-      - image: cimg/base:2021.07
+      #- image: cimg/base:2021.07
+    machine: true
     steps:
       - checkout 
       - run: sudo apt install curl gzip tar
